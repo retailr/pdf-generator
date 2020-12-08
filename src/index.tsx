@@ -5,9 +5,9 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from "./redux/store";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./components/Shared/ErrorBoundary";
+import Routes from "./routes/Routes";
 
 const persistor = persistStore(store);
 
@@ -16,7 +16,7 @@ ReactDOM.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ErrorBoundary>
-          <App />
+          <Routes />
         </ErrorBoundary>
       </PersistGate>
     </Provider>

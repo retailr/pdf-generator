@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import ErrorPage from "../../pages/Error/Error";
 
 interface ErrorBoundaryProps {
   hasError: boolean;
 }
 export default class ErrorBoundary extends React.Component<
-{},
-ErrorBoundaryProps
+  {},
+  ErrorBoundaryProps
 > {
   constructor(props: ErrorBoundaryProps) {
     super(props);
@@ -21,7 +22,10 @@ ErrorBoundaryProps
   render() {
     if (this.state.hasError) {
       return (
-        <div className="text-lg">Something went wrong. Please contact you administrator</div>
+        <ErrorPage
+          error="Oops!"
+          description="Something went wrong. Please contact you administrator"
+        />
       );
     }
     return this.props.children;
