@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Menu } from "./menu";
 
 interface Props {
@@ -8,13 +8,14 @@ interface Props {
 
 const SideMenuItem = React.memo(({ menu }: Props) => {
   return (
-    <Link
+    <NavLink
+      activeClassName="bg-gray-200"
       to={menu.disabled ? "" : menu.path}
       className="w-full text-xs hover:bg-gray-200 flex justify-center flex-wrap text-center items-center text-gray-500 p-3"
     >
       <menu.icon fontSize={24} className="mb-2" />
       <span className="w-full">{menu.title}</span>
-    </Link>
+    </NavLink>
   );
 });
 

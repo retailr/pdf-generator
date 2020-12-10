@@ -10,6 +10,7 @@ import Layout from "../components/Layout";
 import ErrorPage from "../pages/Error/Error";
 import "react-toastify/dist/ReactToastify.min.css";
 import GeneratePdf from "../pages/GeneratePdf";
+import Templates from "../pages/Templates";
 
 interface RefrestToastProps extends ToastContentProps {
   action: () => void;
@@ -85,14 +86,8 @@ const Routes: React.FC<PropsFromRedux> = () => {
         <Route exact path="/generate-pdf">
           <Layout component={<GeneratePdf />} />
         </Route>
-        <Route exact path="/templates">
-          <Layout component={<div>Hello</div>} />
-        </Route>
-        <Route exact path="/add-template">
-          <Layout component={<div>Hello</div>} />
-        </Route>
-        <Route exact path="/templates/:id">
-          <Layout component={<div>Hello</div>} />
+        <Route path="/templates">
+          <Layout component={<Templates />} />
         </Route>
         <Route>
           <Layout

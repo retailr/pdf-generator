@@ -1,4 +1,5 @@
 import React from "react";
+import Seo from "../../components/Seo/Seo";
 import { history } from "../../redux/store";
 
 interface ErrorPageProps {
@@ -8,8 +9,9 @@ interface ErrorPageProps {
 
 const ErrorPage: React.FC<ErrorPageProps> = ({ error, description }) => {
   return (
-    <div className="container mx-auto min-h-screen">
-      <div className="flex w-full flex-col min-h-screen justify-center items-center">
+    <div className="container mx-auto h-screen">
+      <Seo title={error} description={description} />
+      <div className="flex w-full flex-col h-screen justify-center items-center">
         <h2 title={error} className="font-semibold text-8xl">
           {error}
         </h2>

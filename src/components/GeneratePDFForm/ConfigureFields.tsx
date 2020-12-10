@@ -4,10 +4,12 @@ import { Datum } from "../../interfaces";
 
 import "./GeneratePDFForm.modules.css";
 
-interface Props {}
+interface Props {
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+}
 
 const ConfigureFields = (props: Props) => {
-  const { register, control, handleSubmit } = useForm({
+  const { register, control, handleSubmit, errors } = useForm({
     defaultValues: {
       configuration: [],
     },
@@ -17,7 +19,7 @@ const ConfigureFields = (props: Props) => {
     name: "configuration",
   });
   const onSubmit = (data: Datum) => console.log("data", data);
-
+  console.log(errors);
   return (
     <div className="py-6">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -57,7 +59,9 @@ const ConfigureFields = (props: Props) => {
           })}
         </ul>
         <div className="w-full text-center">
-          <input value="Generate PDF" className="btn-primary" type="submit" />
+          <button className="btn-primary" type="submit">
+            Generate PDF
+          </button>
         </div>
       </form>
     </div>

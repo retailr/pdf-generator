@@ -3,11 +3,13 @@ import { useForm } from "react-hook-form";
 import { Datum } from "../../interfaces";
 import "./GeneratePDFForm.modules.css";
 
-interface Props {}
+interface Props {
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const GetFields = (props: Props) => {
+const GetFields = ({ setStep }: Props) => {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data: Datum) => console.log(data);
+  const onSubmit = (data: Datum) => setStep(2);
 
   return (
     <div className="py-6">
