@@ -1,4 +1,4 @@
-import { FiDownload, FiUpload } from "react-icons/fi";
+import { FiDownload, FiFile } from "react-icons/fi";
 import { IconType } from "react-icons";
 
 export interface Menu {
@@ -18,9 +18,9 @@ export const menu: Menu[] = [
     icon: FiDownload,
   },
   {
-    id: "upload-template",
-    path: "/add-template",
-    title: "Upload Template",
-    icon: FiUpload,
+    id: "manage-template",
+    path: "/templates",
+    title: "Manage Templates",
+    icon: FiFile,
   },
 ];

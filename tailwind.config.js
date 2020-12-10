@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['Work Sans', 'sans-serif'],
+      },
       colors: {
         primary: '#f9534d'
       },

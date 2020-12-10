@@ -7,7 +7,7 @@ interface Props {}
 
 const SideMenu = (props: Props) => {
   return (
-    <div className="w-1/12 min-h-screen flex flex-wrap items-start justify-start flex-col bg-white shadow-md">
+    <div className="w-1/12 min-h-screen flex flex-wrap items-start justify-start flex-col border-r border-gray-100 bg-white z-0">
       <div className="w-full flex justify-center py-3">
         <img src={logo} alt="Retailr Logo" className="h-24" />
       </div>

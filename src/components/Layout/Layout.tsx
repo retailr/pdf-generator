@@ -7,7 +7,7 @@ interface Props {
 
 const Layout = ({ component }: Props) => {
   return (
-    <div className="flex w-full">
+    <div className="flex font-serif w-full">
       <SideMenu />
       <main className="w-11/12">
         <section>{component}</section>
