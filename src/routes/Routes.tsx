@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Router, Route, Switch, Redirect } from "react-router";
+import { Route, Switch, Redirect } from "react-router";
 import * as serviceWorker from "../serviceWorker";
 import { ToastContainer, toast, ToastContentProps } from "react-toastify";
 
 import ScrollToTop from "./ScrollToTop";
-import { history } from "../redux/store";
+// import { history } from "../redux/store";
 import { PropsFromRedux } from ".";
 import Layout from "../components/Layout";
 import ErrorPage from "../pages/Error/Error";
 import "react-toastify/dist/ReactToastify.min.css";
 import GeneratePdf from "../pages/GeneratePdf";
 import Templates from "../pages/Templates";
+import { BrowserRouter } from "react-router-dom";
 
 interface RefrestToastProps extends ToastContentProps {
   action: () => void;
@@ -76,7 +77,7 @@ const Routes: React.FC<PropsFromRedux> = () => {
   }, [newVersionAvailable, waitingWorker]);
 
   return (
-    <Router history={history}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ToastContainer />
       <ScrollToTop />
       <Switch>
@@ -100,7 +101,7 @@ const Routes: React.FC<PropsFromRedux> = () => {
           />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
 
