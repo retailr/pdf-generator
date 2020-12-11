@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiMoreVertical } from "react-icons/fi";
+import useComponentVisible from "../../hooks/useComponentVisible";
 import "./Dropdown.modules.scss";
 
 interface Props {
@@ -7,13 +8,25 @@ interface Props {
 }
 
 const Dropdown = ({ children }: Props) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const {
+    ref,
+    isComponentVisible,
+    setIsComponentVisible,
+  } = useComponentVisible(false);
+
   return (
-    <div className="w-full text-right relative">
-      <button onClick={() => setOpen(!open)}>
+    <div ref={ref} className="w-full text-right relative">
+      <button
+        className="p-2 hover:bg-gray-200 rounded"
+        onClick={() => setIsComponentVisible(!isComponentVisible)}
+      >
         <FiMoreVertical />
       </button>
-      {open && <div>{children}</div>}
+      {isComponentVisible ? (
+        <div className="absolute border-gray-100 border text-left right-0 top-full shadow-sm z-10 rounded bg-white w-40">
+          {children}
+        </div>
+      ) : null}
     </div>
   );
 };

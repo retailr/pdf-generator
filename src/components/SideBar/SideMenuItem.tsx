@@ -9,7 +9,7 @@ interface Props {
 const SideMenuItem = React.memo(({ menu }: Props) => {
   return (
     <NavLink
-      activeClassName="bg-gray-200"
+      activeClassName="text-primary"
       to={menu.disabled ? "" : menu.path}
       className="w-full text-xs hover:bg-gray-200 flex justify-center flex-wrap text-center items-center text-gray-500 p-3"
     >

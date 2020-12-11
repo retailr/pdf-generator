@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Datum } from "../../interfaces";
-import "./GeneratePDFForm.modules.css";
+import "../../styles/Form.scss";
 
 interface Props {
   setStep: React.Dispatch<React.SetStateAction<number>>;

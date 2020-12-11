@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./GeneratePDFForm.modules.css";
 import GetFields from "./GetFields";
 import ConfigureFields from "./ConfigureFields";
+import "../../styles/Form.scss";
 
 interface Props {}
 
